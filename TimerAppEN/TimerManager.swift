@@ -12,9 +12,15 @@ class TimerManager: ObservableObject {
     
     @Published var timerMode: TimerMode = .initial
     
-    @Published var secondsLeft = 60
+    @Published var secondsLeft = UserDefaults.standard.integer(forKey: "timerLength")
     
     var timer = Timer()
+    
+    func setTimerLength(minutes: Int) {
+        let defaults = UserDefaults.standard
+        defaults.set(minutes, forKey: "timerLength")
+        secondsLeft = minutes
+    }
     
     func start() {
         timerMode = .running
@@ -30,7 +36,7 @@ class TimerManager: ObservableObject {
     
     func reset() {
         self.timerMode = .initial
-        self.secondsLeft = 60
+        self.secondsLeft = UserDefaults.standard.integer(forKey: "timerLength")
         timer.invalidate()
     }
     
