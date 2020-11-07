@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var timerMode: TimerMode = .initial
+    @ObservedObject var timerManager = TimerManager()
+    
     @State var selectedPickerIndex = 0
     
     let availableMinutes = Array(1...59)
@@ -18,21 +19,27 @@ struct ContentView: View {
         
         NavigationView {
             VStack {
-                Text("60")
+                Text("\(timerManager.secondsLeft)")
                     .font(.system(size: 80))
                     .padding(.top, 80)
-                Image(systemName: timerMode == .running ? "pause.circle.fill" : "play.circle.fill")
+                Image(systemName: timerManager.timerMode == .running ? "pause.circle.fill" : "play.circle.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 180, height: 180)
                     .foregroundColor(.red)
-                if timerMode == .paused {
+                    .onTapGesture(perform: {
+                        self.timerManager.timerMode == .running ? self.timerManager.pause() : self.timerManager.start()
+                    })
+                if timerManager.timerMode == .paused {
                     Image(systemName: "gobackward")
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 50, height: 50)
                         .padding(.top, 40)
+                        .onTapGesture(perform: {
+                            self.timerManager.reset()
+                        })
                 }
-                if timerMode == .initial {
+                if timerManager.timerMode == .initial {
                     Picker(selection: $selectedPickerIndex, label: Text("")) {
                         ForEach(0 ..< availableMinutes.count) {
                             Text("\(self.availableMinutes[$0]) min")

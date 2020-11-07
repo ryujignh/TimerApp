@@ -14,6 +14,7 @@
 		C20A5D8C25569929008BBF37 /* TimerAppENTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20A5D8B25569929008BBF37 /* TimerAppENTests.swift */; };
 		C20A5D9725569929008BBF37 /* TimerAppENUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20A5D9625569929008BBF37 /* TimerAppENUITests.swift */; };
 		C20A5DA825569959008BBF37 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20A5DA725569959008BBF37 /* Helper.swift */; };
+		C2EE215A25569F6400A8647F /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EE215925569F6400A8647F /* TimerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C20A5D9625569929008BBF37 /* TimerAppENUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAppENUITests.swift; sourceTree = "<group>"; };
 		C20A5D9825569929008BBF37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C20A5DA725569959008BBF37 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		C2EE215925569F6400A8647F /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				C20A5D7925569928008BBF37 /* TimerAppENApp.swift */,
 				C20A5D7B25569928008BBF37 /* ContentView.swift */,
+				C2EE215925569F6400A8647F /* TimerManager.swift */,
 				C20A5DA725569959008BBF37 /* Helper.swift */,
 				C20A5D7D25569929008BBF37 /* Assets.xcassets */,
 				C20A5D8225569929008BBF37 /* Info.plist */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C20A5D7C25569928008BBF37 /* ContentView.swift in Sources */,
+				C2EE215A25569F6400A8647F /* TimerManager.swift in Sources */,
 				C20A5D7A25569928008BBF37 /* TimerAppENApp.swift in Sources */,
 				C20A5DA825569959008BBF37 /* Helper.swift in Sources */,
 			);
